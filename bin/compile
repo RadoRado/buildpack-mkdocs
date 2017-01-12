@@ -37,6 +37,8 @@ export CPLUS_INCLUDE_PATH=$CACHE_DIR/$PYTHON_VERSION/include
 export LIBRARY_PATH=$CACHE_DIR/$PYTHON_VERSION/lib
 export LD_LIBRARY_PATH=$CACHE_DIR/$PYTHON_VERSION/lib
 
+export_env_dir
+
 puts-step "Ensure pip"
 python -m ensurepip --upgrade | indent
 
