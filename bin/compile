@@ -42,8 +42,11 @@ python -m ensurepip --upgrade | indent
 
 cd $BUILD_DIR
 
+puts-step "Listing ENV variables"
+env
+
 puts-step "Checking for STATIC_URL"
-python manage.py runscript get_static_url
+DJANGO_SETTINGS_MODULE=config.settings.production python manage.py runscript get_static_url
 
 puts-step "Replacing base_url in mkdocs.yml"
 ./utility/set_mkdocs_base_url.sh
