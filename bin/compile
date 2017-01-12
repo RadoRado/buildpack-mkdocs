@@ -45,6 +45,9 @@ cd $BUILD_DIR
 puts-step "Checking for STATIC_URL"
 python manage.py runscript get_static_url
 
+puts-step "Replacing base_url in mkdocs.yml"
+./utility/set_mkdocs_base_url.sh
+
 puts-step "Installing MkDocs"
 python -m pip install --quiet mkdocs | indent
 
